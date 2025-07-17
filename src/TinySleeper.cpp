@@ -1,5 +1,16 @@
 #include "TinySleeper.h"
 
+#ifndef clear_bit
+#define clear_bit(sfr, bit) (_SFR_BYTE(sfr) &= ~_BV(bit))
+#endif
+#ifndef set_bit
+#define set_bit(sfr, bit) (_SFR_BYTE(sfr) |= _BV(bit))
+#endif
+
+#define power_analog_comp_disable() set_bit(ACSR, ACD)
+
+#define power_analog_comp_enable() clear_bit(ACSR, ACD)
+
 TinySleeper_t::TinySleeper_t()
 {
     _pinManagementEnabled = false; // By default, pin management is disabled for safety
@@ -190,8 +201,8 @@ void TinySleeper_t::sleep(uint32_t duration_ms)
     // --- POST-WAKEUP RESTORATION ---
     restoreSystemStates();
 
-    if (_pinManagementEnabled) 
-        restorePinStates(); 
+    if (_pinManagementEnabled)
+        restorePinStates();
 }
 
 void TinySleeper_t::systemGoToSleep()
