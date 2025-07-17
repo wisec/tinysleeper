@@ -1,0 +1,11 @@
+#######################################
+# Syntax Highlighting
+#######################################
+
+TinySleeper		KEYWORD1
+TinySleeper_t	KEYWORD1
+
+sleep					KEYWORD2
+enablePinManagement		KEYWORD2
+excludePin				KEYWORD2
+enableBodInSleep		KEYWORD2
