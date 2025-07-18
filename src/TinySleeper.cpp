@@ -134,54 +134,61 @@ void TinySleeper_t::sleep(uint32_t duration_ms)
     {
         int prescaler = -1;
         // Select the most suitable WDT prescaler
+#ifdef WDTO_8S
         if (duration_ms >= 8000)
         {
-            prescaler = 9;
+            prescaler = WDTO_8S;
             duration_ms -= 8000;
         }
-        else if (duration_ms >= 4000)
+        else 
+#endif 
+#ifdef WDTO_4S
+        if (duration_ms >= 4000)
         {
-            prescaler = 8;
+            prescaler = WDTO_4S;
             duration_ms -= 4000;
         }
-        else if (duration_ms >= 2000)
+        else 
+#endif 
+        if (duration_ms >= 2000)
         {
-            prescaler = 7;
+            prescaler = WDTO_2S;
             duration_ms -= 2000;
         }
-        else if (duration_ms >= 1000)
+        else 
+        if (duration_ms >= 1000)
         {
-            prescaler = 6;
+            prescaler = WDTO_1S;
             duration_ms -= 1000;
         }
         else if (duration_ms >= 500)
         {
-            prescaler = 5;
+            prescaler = WDTO_500MS;
             duration_ms -= 500;
         }
         else if (duration_ms >= 250)
         {
-            prescaler = 4;
+            prescaler = WDTO_250MS;
             duration_ms -= 250;
         }
         else if (duration_ms >= 128)
         {
-            prescaler = 3;
+            prescaler = WDTO_120MS;
             duration_ms -= 128;
         }
         else if (duration_ms >= 64)
         {
-            prescaler = 2;
+            prescaler = WDTO_60MS;
             duration_ms -= 64;
         }
         else if (duration_ms >= 32)
         {
-            prescaler = 1;
+            prescaler = WDTO_30MS;
             duration_ms -= 32;
         }
         else if (duration_ms >= 16)
         {
-            prescaler = 0;
+            prescaler = WDTO_15MS;
             duration_ms -= 16;
         }
 
