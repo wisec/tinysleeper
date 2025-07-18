@@ -1,0 +1,22 @@
+{
+  "name": "TinySleeper",
+  "description": "Library for putting ATtiny25/45/85 to timed sleep in one line of code!",
+  "keywords": "attiny25,attiny45,attiny85,sleep,snore,tiny,watchdog",
+  "authors":
+  {
+    "name": "Stefano Di Paola",
+    "email": "steve.wisec@gmail.com"
+  },
+  "repository":
+  {
+    "type": "git",
+    "url": "https://github.com/wisec/tinysleeper.git"
+  },
+  "version": "1.0.1",
+  "examples": "examples/*.ino",
+  "frameworks": "arduino",
+  "platforms":
+  [
+    "atmelavr"
+  ]
+}
