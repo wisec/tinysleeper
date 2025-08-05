@@ -12,7 +12,7 @@ void setup() {
   pinMode(MOSFET_PIN, OUTPUT);
   digitalWrite(MOSFET_PIN, LOW); // Ensure the motor/device is off
 
-  // ---- CONFIGURE DeepSleeper ----
+  // ---- CONFIGURE TinySleeper ----
   // 1. Enable advanced pin management for maximum power savings.
   TinySleeper.enablePinManagement(true);
   
