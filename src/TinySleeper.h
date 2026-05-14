@@ -7,8 +7,9 @@
 #include <avr/power.h>
 
 
-#if !(defined(__AVR_ATtiny85__) || defined(__AVR_ATtiny45__) || defined(__AVR_ATtiny25__))
-  #error "TinySleeper library is only compatible with the ATtiny x5 series (85, 45, 25)."
+#if !( defined(__AVR_ATtiny85__) || defined(__AVR_ATtiny45__) || defined(__AVR_ATtiny25__) || \
+       defined(__AVR_ATtiny88__) || defined(__AVR_ATtiny48__) )
+  #error "TinySleeper library is only compatible with the ATtiny x5 and x8 series (85, 45, 25, 88, 48)."
 #endif
 
 // Define the number of I/O pins for the ATtiny85 (PB0-PB5)

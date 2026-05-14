@@ -1,6 +1,6 @@
 # TinySleeper
 
-Inspired by Tinysnore, TinySleeper is an advanced, state-aware, and robust low-power sleep library for the ATtiny85/45/25 family of microcontrollers.
+Inspired by Tinysnore, TinySleeper is an advanced, state-aware, and robust low-power sleep library for the ATtiny85/45/25 and ATtiny88/48 family of microcontrollers.
 
 This library allows you to put your ATtiny into deep sleep to save battery power, waking it up with the Watchdog Timer. It includes advanced features to automatically manage pin and peripheral states for maximum power efficiency.
 
@@ -26,6 +26,8 @@ This library is specifically designed for the **AVR ATtiny x5 series** of microc
 -   ATtiny85
 -   ATtiny45
 -   ATtiny25
+-   ATtiny88
+-   ATtiny48
 
 The library will automatically prevent compilation on any other board to avoid errors and undefined behavior.
 

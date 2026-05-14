@@ -1,7 +1,7 @@
 {
   "name": "TinySleeper",
-  "description": "Library for putting ATtiny25/45/85 to timed sleep in one line of code!",
-  "keywords": "attiny25,attiny45,attiny85,sleep,snore,tiny,watchdog",
+  "description": "Library for putting ATtiny25/45/85/88/48 to timed sleep in one line of code!",
+  "keywords": "attiny25,attiny45,attiny85,attiny88,attiny48,sleep,snore,tiny,watchdog",
   "authors":
   {
     "name": "Stefano Di Paola",
