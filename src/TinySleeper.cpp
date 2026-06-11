@@ -229,8 +229,13 @@ void TinySleeper_t::setupWdtForWakeup(int prescaler_index)
     wdt_prescaler_bits |= (1 << WDIE);
 
     // This is the timed sequence required to change WDT settings.
-    WDTCR |= (1 << WDCE) | (1 << WDE); // Enable Watchdog Change
-    WDTCR = wdt_prescaler_bits;        // Apply new settings
+    #ifdef WDTCSR
+        WDTCSR |= (1 << WDCE) | (1 << WDE); // Enable Watchdog Change
+        WDTCSR = wdt_prescaler_bits;         // Apply new settings
+    #else
+        WDTCR |= (1 << WDCE) | (1 << WDE); // Enable Watchdog Change
+        WDTCR = wdt_prescaler_bits;        // Apply new settings
+    #endif
 }
 
 // Watchdog Interrupt Service Routine (ISR).
