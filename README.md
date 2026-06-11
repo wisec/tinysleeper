@@ -90,3 +90,8 @@ void loop() {
   TinySleeper.sleep(5000);
   // The ATtiny will wake up here and continue the loop
 }
+
+
+## Contributors
+
+- @bwack
